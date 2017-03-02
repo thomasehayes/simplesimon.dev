@@ -54,6 +54,16 @@ h1 {
 	clear: left;
 }
 
+.up {
+	opacity: 1;
+	box-shadow: 10px 10px 5px #888;
+}
+
+.down {
+	opacity: 0.6;
+	box-shadow: 10px 10px 5px #888;
+}
+
 .squareLocation {
 	position: relative;
 	top: 15%;
