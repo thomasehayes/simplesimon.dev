@@ -1,0 +1,102 @@
+/*Rotate Animation*/
+@-webkit-keyframes spin {
+	from {transform: rotate(0);}
+	to {transform: rotate(360deg);}
+}
+
+@-moz-keyframes spin {
+	from {transform: rotate(0);}
+	to {transform: rotate(360deg);}
+}
+
+@-o-keyframes spin {
+	from {transform: rotate(0);}
+	to {transform: rotate(360deg);}
+}
+
+@keyframes spin {
+	from {transform: rotate(0);}
+	to {transform: rotate(360deg);}
+}
+
+h1 {
+	text-align: center;
+	position: absolute;
+	left: 39%;
+
+}
+.container {
+	background-color: #222;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -300px;
+	margin-left: -300px;
+	z-index: 4;
+	height: 500px;
+	width: 500px;
+	
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 30%;
+}
+
+.square {
+	height: 150px;
+	width: 150px;
+	float: left;
+	border: 1px solid black;
+	margin: 10px;
+	box-shadow: 10px 10px 10px pink;
+}
+
+.square:nth-child(3) {
+	clear: left;
+}
+
+.squareLocation {
+	position: relative;
+	top: 15%;
+	left: 15%;
+}
+
+.red {
+	background-color: red;
+
+	-webkit-animation: spin 10s linear infinite;
+	-moz-animation: spin 10s linear infinite;
+	-o-animation: spin 10s linear infinite;
+	animation: spin 10s linear infinite;
+}
+
+.yellow {
+	background-color: yellow;
+
+
+	-webkit-animation: spin 10s linear infinite reverse;
+	-moz-animation: spin 10s linear infinite reverse;
+	-o-animation: spin 10s linear infinite reverse;
+	animation: spin 10s linear infinite reverse;
+}
+
+.green {
+	background-color: limegreen;
+
+
+	-webkit-animation: spin 10s linear infinite reverse;
+	-moz-animation: spin 10s linear infinite reverse;
+	-o-animation: spin 10s linear infinite reverse;
+	animation: spin 10s linear infinite reverse;
+}
+
+.blue {
+	background-color: blue;
+
+
+	-webkit-animation: spin 10s linear infinite;
+	-moz-animation: spin 10s linear infinite;
+	-o-animation: spin 10s linear infinite;
+	animation: spin 10s linear infinite;
+}
+
+

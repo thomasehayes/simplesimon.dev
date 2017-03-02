@@ -1,0 +1,80 @@
+Simple Simon Game
+Premises of the game: Basic Simon Says aspect with buttons.
+A player must click the buttons that light up after it finishes its pattern sequence. If player presses the correct buttons, then the next round starts and will add on a new button at the end of its previous pattern sequence. 
+Rules: 
+	Round 1: 
+		Step 1: Press Enter Key to Start 
+		Step 2: 1 random button lights up for 1500 milliseconds
+		Step 3: Button from Step 2 goes back to normal color
+		Step 4: Player presses the button that was lit in Step 2
+		Step 5: If player gets it correct, then move on to next round
+		Step 5.5: If player doesn’t get it correct, end game.
+		Step 5.5a: Return to Press Enter Key to Start Screen
+
+	Round 2: 
+		Step 1: Call back previous round’s button
+		Step 2: Button from Step 1 goes back to normal color
+		Step 3: Add new button following Steps 1 and 2
+		Step 4: Player presses the button pattern sequence following Step 3
+		Step 5: If player gets it correct, then move on to next round
+		Step 5.5: If player doesn’t get it correct, end game.
+		Step 5.5a: Return to Press Enter Key to Start Screen
+
+	Round 3 and on: 
+		Continue incrementing buttons after each round is over if player presses correct button pattern sequence
+
+
+What's needed:
+
+Instead of buttons, use div tags that have id's of the color of each box. 
+	Use class to shape boxes to be the same 
+
+Like the Konami code, I will need to have a variable that holds an empty array and is called on when I or a player clicks the color box as well as another array that holds each div when clicked on
+	If the sequence is correct, move onto the next round.
+
+
+Global Variables 
+// need to figure out correct variable for colors.
+// It will be similar to the konami code when performing the function which I'm providing at below 
+
+    	var konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+    	var keys= [];
+
+        $(document).keyup(function(event){
+            console.log(event.keyCode);
+
+        keys.push(event.keyCode);
+            if(keys.length > konami.length) {
+            	keys.shift();
+            }
+
+        if(keys.toString() == konami.toString()) {
+            $("body").fadeOut(1000, redirectPage);
+
+        	function redirectPage() {window.open("https://www.youtube.com/v/WxfZkMm3wcg?rel=o&autoplay=1", "_self");
+        	}
+        }
+        });
+
+Functions needed:
+Random number generator for each box
+Something that calls back previous generated number for each round and adds a new random box at the end of the sequence
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
