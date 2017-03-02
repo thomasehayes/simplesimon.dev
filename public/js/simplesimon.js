@@ -1,19 +1,12 @@
+$(document).ready(function(){
 "use strict";
 
-var colors = ["red", "yellow", "green", "blue"];
-
-function color(){
-	var randomNumber = Math.floor(Math.random()*4);
-	console.log(colors[randomNumber]);
-}
-color();
 
 $(".square").click(function(click){
-	console.log(click)
-	animate($(this));
+	animateClick($(this));
 });
 
-function animate(element) {
+function animateClick(element) {
 	$(element).removeClass("down");
 	$(element).addClass("up");
 	setTimeout(function(){
@@ -21,3 +14,19 @@ function animate(element) {
 		$(element).addClass("down");
 	}, 100);
 }
+
+var colors = ["red", "yellow", "green", "blue"];
+
+function getRandomColor(){
+	var randomNumber = Math.floor(Math.random()* 4);
+	console.log(colors[randomNumber]);
+}
+
+function animateRandomSquare() {
+	var squareToAnimate = getRandomColor();
+	animate(squareToAnimate);
+}
+
+getRandomColor();
+
+});
