@@ -1,6 +1,5 @@
 // $(document).ready(function(){
 "use strict";
-var colors = ["red", "yellow", "green", "blue"];
 var simonSequence = [];
 var counter = 0;
 
@@ -32,21 +31,36 @@ var counter = 0;
 			} else {
 				simonSequence = [];
 				counter = 0;
-				alert("GAME OVER!")
+				console.log("you have lost")
+				reset();
 			}
 		
 	});
+//====================================================
+//		How to Start game
+//====================================================
+ function startGame (){
+ 		simonMove();
+ }
+//====================================================
+//		How to Reset game
+//====================================================
 
+	function reset(){
+		simonSequence = [];
+		counter = 0;
+	}
 //====================================================
 //		How to generate random box colors
 //====================================================
 	function getRandomColor(){
+		var colors = ["red", "yellow", "green", "blue"];
 		var randomNumber = Math.floor(Math.random()* 4);
 		return (colors[randomNumber]);
 	}
 
 //====================================================
-//		Simon's Move
+//		Simon's Move to Adding to Array
 //====================================================
 	function simonMove(){
 		var square = getRandomColor();
@@ -83,9 +97,12 @@ var counter = 0;
 		}, 500);
 	}
 
-	simonMove();
-
-
+//====================================================
+//		How to Start Game with button
+//====================================================
+$("#start").click(function(){
+	startGame();
+})
 
 
 
