@@ -1,74 +1,95 @@
 // $(document).ready(function(){
 "use strict";
 var colors = ["red", "yellow", "green", "blue"];
-var computerSequence = [];
-var iterator = 0;
-var userInput = [];
-var start = "off";
-
-//====================================================
-//		Start/Restart Button, need to connect to game
-//====================================================
-$("#start").click(function(){
-	computerSequence == [];
-	userInput ==[];
-	$("#start").hide();
-	$("#restart").show();
-});
-$("#restart").click(function(){
-	computerSequence == [];
-	userInput ==[];
-	$("#restart").hide();
-	$("#start").show();
-});
+var simonSequence = [];
+var counter = 0;
 
 //====================================================
 //		User click Function to light up squares
 //====================================================
-$(".square").click(function(click){
-	animateClick($(this));
-});
 
-function animateClick(element) {
-	$(element).removeClass("down");
-	$(element).addClass("up");
-	setTimeout(function(){
-		$(element).removeClass("up");
-		$(element).addClass("down");
-	}, 100);
-}
+	function animateClick(element) {
+		$(element).removeClass("down");
+		$(element).addClass("up");
+		setTimeout(function(){
+			$(element).removeClass("up");
+			$(element).addClass("down");
+		}, 500);
+	}
+
+
+	$(".square").click(function(click){
+		animateClick($(this));
+
+			if($(this).attr("data") == simonSequence[counter]){
+				
+				if(counter == (simonSequence.length -1)) {
+					counter = 0;
+					simonMove();
+				} else {
+					counter++;
+				}
+			} else {
+				simonSequence = [];
+				counter = 0;
+				console.log("dead");
+			}
+		
+	});
 
 //====================================================
-//		How to generate random colors
+//		How to generate random box colors
 //====================================================
-function getRandomColor(){
-	var randomNumber = Math.floor(Math.random()* 4);
-	return colors[randomNumber];
-}
+	function getRandomColor(){
+		var randomNumber = Math.floor(Math.random()* 4);
+		return (colors[randomNumber]);
+	}
 
 //====================================================
-//		This adds getRandomColor to end of computerSequence array
+//		Simon's Move
 //====================================================
-function addNewSquare() {
-	computerSequence.push(getRandomColor());
-	return computerSequence;
-}
+	function simonMove(){
+		var square = getRandomColor();
+		simonSequence.push(square);
+		playSimonSequence(simonSequence);
+	}
 
 //====================================================
-//	This doesn't work, but supposed to light up squares
+//		How to generate Simon's Sequence
 //====================================================
-function animateRandomSquare() {
-	var squareToAnimate = computerSequence[iterator];
-	animate(squareToAnimate);
-	$(element).removeClass("down");
-	$(element).addClass("up");
-	setTimeout(function(){
-		$(element).removeClass("up");
-		$(element).addClass("down");
-	}, 1000);
+	
+	function playSimonSequence(simonSequence) {
+		var i = 0;
+		var intervalId = setInterval(function(){
+			switch (simonSequence[i]) {
+				case "red": 
+					animateClick($(".red"))
+					break;
+				case "yellow": 
+					animateClick($(".yellow"))
+					break;
+				case "green": 
+					animateClick($(".green"))
+					break;
+				case "blue": 
+					animateClick($(".blue"))
+					break;										
+			}
+			if(i < simonSequence.length){
+				i++;
+			} else {
+				clearInterval(intervalId);
+			}
+		}, 500);
+	}
 
-}
+simonMove();
 
-getRandomColor();
+
+
+
+
+
+
 
 // });

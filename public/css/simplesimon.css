@@ -73,40 +73,40 @@ h1 {
 .red {
 	background-color: red;
 
-/*	-webkit-animation: spin 10s linear infinite;
+	-webkit-animation: spin 10s linear infinite;
 	-moz-animation: spin 10s linear infinite;
 	-o-animation: spin 10s linear infinite;
-	animation: spin 10s linear infinite;*/
+	animation: spin 10s linear infinite;
 }
 
 .yellow {
 	background-color: yellow;
 
-/*
+
 	-webkit-animation: spin 10s linear infinite reverse;
 	-moz-animation: spin 10s linear infinite reverse;
 	-o-animation: spin 10s linear infinite reverse;
-	animation: spin 10s linear infinite reverse;*/
+	animation: spin 10s linear infinite reverse;
 }
 
 .green {
 	background-color: limegreen;
 
-/*
+
 	-webkit-animation: spin 10s linear infinite reverse;
 	-moz-animation: spin 10s linear infinite reverse;
 	-o-animation: spin 10s linear infinite reverse;
-	animation: spin 10s linear infinite reverse;*/
+	animation: spin 10s linear infinite reverse;
 }
 
 .blue {
 	background-color: blue;
 
 
-/*	-webkit-animation: spin 10s linear infinite;
+	-webkit-animation: spin 10s linear infinite;
 	-moz-animation: spin 10s linear infinite;
 	-o-animation: spin 10s linear infinite;
-	animation: spin 10s linear infinite;*/
+	animation: spin 10s linear infinite;
 }
 
 
