@@ -14,7 +14,7 @@ var counter = 0;
 		setTimeout(function(){
 			$(element).removeClass("up");
 			$(element).addClass("down");
-		}, 500);
+		}, 300);
 	}
 
 
@@ -32,7 +32,7 @@ var counter = 0;
 			} else {
 				simonSequence = [];
 				counter = 0;
-				console.log("dead");
+				alert("GAME OVER!")
 			}
 		
 	});
@@ -83,7 +83,7 @@ var counter = 0;
 		}, 500);
 	}
 
-simonMove();
+	simonMove();
 
 
 
