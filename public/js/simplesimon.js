@@ -34,7 +34,7 @@ var roundCounter = 2
 			} else {
 				simonSequence = [];
 				counter = 0;
-				$("#round").html("Round: " + "Failed");
+				$("#roundFailed").html("Round: " + "Failed");
 				roundCounter=2
 				reset();
 			}	
@@ -46,6 +46,8 @@ var roundCounter = 2
  
 	 function startGame (){
 	 		simonMove();
+            $("#roundFailed").html("");
+
 	 }
 
 //====================================================
