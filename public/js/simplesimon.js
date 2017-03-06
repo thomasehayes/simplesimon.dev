@@ -1,11 +1,11 @@
-// $(document).ready(function(){
+$(document).ready(function(){
 "use strict";
 var simonSequence = [];
 var counter = 0;
 var roundCounter = 2
 
 //====================================================
-//		User click Function to light up squares
+//		Animation for Squares to Light up
 //====================================================
 
 	function animateClick(element) {
@@ -17,14 +17,13 @@ var roundCounter = 2
 		}, 300);
 	}
 
+//====================================================
+//		Click function to Start animation & Round
+//====================================================
 
 	$(".square").click(function(click){
 		animateClick($(this));
-		console.log($(this));
-					
-
 			if($(this).attr("data") == simonSequence[counter]){
-				
 				if(counter == (simonSequence.length -1)) {
 					$("#round").html("Round: " + roundCounter++);
 					counter = 0;
@@ -38,15 +37,17 @@ var roundCounter = 2
 				$("#round").html("Round: " + "Failed");
 				roundCounter=2
 				reset();
-			}
-		
+			}	
 	});
+	
 //====================================================
 //		How to Start game
 //====================================================
- function startGame (){
- 		simonMove();
- }
+ 
+	 function startGame (){
+	 		simonMove();
+	 }
+
 //====================================================
 //		How to Reset game
 //====================================================
@@ -55,9 +56,11 @@ var roundCounter = 2
 		simonSequence = [];
 		counter = 0;
 	}
+
 //====================================================
 //		How to generate random box colors
 //====================================================
+	
 	function getRandomColor(){
 		var colors = ["red", "yellow", "green", "blue"];
 		var randomNumber = Math.floor(Math.random()* 4);
@@ -67,6 +70,7 @@ var roundCounter = 2
 //====================================================
 //		Simon's Move to Adding to Array
 //====================================================
+	
 	function simonMove(){
 		var square = getRandomColor();
 		simonSequence.push(square);
@@ -105,14 +109,10 @@ var roundCounter = 2
 //====================================================
 //		How to Start Game with button
 //====================================================
-$("#start").click(function(){
-	$("#round").html("Round: 1");
-	startGame();
-})
 
+	$("#start").click(function(){
+		$("#round").html("Round: 1");
+		startGame();
+	});
 
-
-
-
-
-// });
+});
