@@ -2,6 +2,7 @@
 "use strict";
 var simonSequence = [];
 var counter = 0;
+var roundCounter = 2
 
 //====================================================
 //		User click Function to light up squares
@@ -19,10 +20,13 @@ var counter = 0;
 
 	$(".square").click(function(click){
 		animateClick($(this));
+		console.log($(this));
+					
 
 			if($(this).attr("data") == simonSequence[counter]){
 				
 				if(counter == (simonSequence.length -1)) {
+					$("#round").html("Round: " + roundCounter++);
 					counter = 0;
 					simonMove();
 				} else {
@@ -31,7 +35,8 @@ var counter = 0;
 			} else {
 				simonSequence = [];
 				counter = 0;
-				console.log("you have lost")
+				$("#round").html("Round: " + "Failed");
+				roundCounter=2
 				reset();
 			}
 		
@@ -101,12 +106,9 @@ var counter = 0;
 //		How to Start Game with button
 //====================================================
 $("#start").click(function(){
+	$("#round").html("Round: 1");
 	startGame();
 })
-
-//====================================================
-//		Need to add Round Counter
-//====================================================
 
 
 
