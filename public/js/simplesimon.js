@@ -32,11 +32,7 @@ var roundCounter = 2
 					counter++;
 				}
 			} else {
-				simonSequence = [];
-				counter = 0;
-				$("#roundFailed").html("Round: " + "Failed");
-				roundCounter=2
-				reset();
+				gameOver();
 			}	
 	});
 
@@ -116,5 +112,14 @@ var roundCounter = 2
 		$("#round").html("Round: 1");
 		startGame();
 	});
-
+//====================================================
+//      Game Over
+//====================================================
+    function gameOver(){
+        simonSequence = [];
+        counter = 0;
+        $("#roundFailed").html("Round: " + "Failed");
+        roundCounter=2
+        reset();
+    }
 });
