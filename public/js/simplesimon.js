@@ -22,6 +22,7 @@ var roundCounter = 2
 //====================================================
 
 	$(".square").click(function(click){
+
 		animateClick($(this));
 			if($(this).attr("data") == simonSequence[counter]){
 				if(counter == (simonSequence.length -1)) {
@@ -121,5 +122,9 @@ var roundCounter = 2
         $("#roundFailed").html("Round: " + "Failed");
         roundCounter=2
         reset();
+        // var x = $("myAudio");
+        // function playAudio() {
+        //     x.play();
+        // }
     }
 });
