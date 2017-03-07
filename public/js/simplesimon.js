@@ -19,11 +19,22 @@ function animateClick(element){
 }
 
 //====================================================
-//		How to Start Game with button
+//      How to Start game
+//====================================================
+function startGame(){
+    simonSequence = [];
+    counter = 0;
+    roundCounter = 2;
+    simonMove();
+    $("#roundFailed").html("");
+}
+
+//====================================================
+//      How to Start Game with button
 //====================================================
 $("#start").click(function(){
-	$("#round").html("Round: 1");
-	startGame();
+    $("#round").html("Round: 1");
+    startGame();
 });
 
 //====================================================
@@ -44,14 +55,6 @@ $(".square").click(function(click){
         gameOver();
     }   
 });
-
-//====================================================
-//      How to Start game
-//====================================================
-function startGame(){
-    simonMove();
-    $("#roundFailed").html("");
-}
 
 //====================================================
 //      How to generate random box colors

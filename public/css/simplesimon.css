@@ -71,7 +71,6 @@ body {
 	float: left;
 	left: 70px;
 	border: 2px solid black;
-	box-shadow: 10px 10px 10px black;
 }
 
 .red {
@@ -108,7 +107,6 @@ body {
 	background: linear-gradient(135deg, rgba(145,232,66,1) 0%, rgba(145,232,66,1) 44%, rgba(210,255,82,1) 54%, rgba(210,255,82,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#91e842', endColorstr='#d2ff52', GradientType=1 );
 	border-bottom-left-radius: 100%;
-
 }
 
 .blue {
@@ -125,10 +123,9 @@ body {
 
 .up {
 	opacity: 1;
-	box-shadow: 10px 10px 5px #888;
 }
 
 .down {
-	opacity: 0.6;
+	opacity: 0.7;
 	box-shadow: 10px 10px 5px #888;
 }
