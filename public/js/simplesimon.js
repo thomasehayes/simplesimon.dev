@@ -8,7 +8,6 @@ var roundCounter = 2;
 //====================================================
 //      Animation for Squares to Light up
 //====================================================
-
 function animateClick(element){
     $(element).removeClass("down");
     $(element).addClass("up");
@@ -22,7 +21,6 @@ function animateClick(element){
 //====================================================
 //		How to Start Game with button
 //====================================================
-
 $("#start").click(function(){
 	$("#round").html("Round: 1");
 	startGame();
@@ -31,12 +29,11 @@ $("#start").click(function(){
 //====================================================
 //      Click function to Start animation & Round
 //====================================================
-
 $(".square").click(function(click){
     animateClick($(this));
 
-    if($(this).attr("data") == simonSequence[counter]){
-        if(counter == (simonSequence.length -1)){
+    if ($(this).attr("data") == simonSequence[counter]){
+        if (counter == (simonSequence.length -1)){
             $("#round").html("Round: " + roundCounter++);
             counter = 0;
             simonMove();
@@ -51,17 +48,14 @@ $(".square").click(function(click){
 //====================================================
 //      How to Start game
 //====================================================
- 
-function startGame (){
+function startGame(){
     simonMove();
     $("#roundFailed").html("");
-
 }
 
 //====================================================
 //      How to generate random box colors
-//====================================================
-    
+//====================================================   
 function getRandomColor(){
     var colors = ["red", "yellow", "green", "blue"];
     var randomNumber = Math.floor(Math.random()* 4);
@@ -71,7 +65,6 @@ function getRandomColor(){
 //====================================================
 //      Simon's Move to Adding to Array
 //====================================================
-    
 function simonMove(){
     var square = getRandomColor();
     simonSequence.push(square);
@@ -80,42 +73,39 @@ function simonMove(){
 
 //====================================================
 //      How to generate Simon's Sequence
-//====================================================
-    
-function playSimonSequence(simonSequence) {
+//====================================================   
+function playSimonSequence(simonSequence){
     var i = 0;
     var intervalId = setInterval(function(){
         switch (simonSequence[i]) {
             case "red": 
-                animateClick($(".red"))
+                animateClick($(".red"));
                 break;
             case "yellow": 
-                animateClick($(".yellow"))
+                animateClick($(".yellow"));
                 break;
             case "green": 
-                animateClick($(".green"))
+                animateClick($(".green"));
                 break;
             case "blue": 
-                animateClick($(".blue"))
+                animateClick($(".blue"));
                 break;                                      
         }
-        if(i < simonSequence.length){
+        if (i < simonSequence.length){
             i++;
         } else {
             clearInterval(intervalId);
         }
     }, 500);
 }
-
 //====================================================
-//      Game Over
+//      Game Over Function
 //====================================================
-
 function gameOver(){
     simonSequence = [];
     counter = 0;
-    $("#roundFailed").html("Round: " + "Failed");
     roundCounter=2;
+    $("#roundFailed").html("Round: " + "Failed");
 }
 
 });
